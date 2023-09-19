@@ -158,65 +158,65 @@ try:
 except OSError as e:
     raise
 
-# LOGGING = {
-#     "version": 1,
-#     "disable_existing_loggers": True,
-#     "filters": {
-#         "require_debug_false": {"()": "django.utils.log.RequireDebugFalse"},
-#         "require_debug_true": {"()": "django.utils.log.RequireDebugTrue"},
-#     },
-#     "formatters": {
-#         "simple": {
-#             "format": "[%(asctime)s] %(levelname)s %(message)s",
-#             "datefmt": "%Y-%m-%d %H:%M:%S",
-#         },
-#         "verbose": {
-#             "format": "[%(asctime)s] %(levelname)s [%(name)s.%(funcName)s:%(lineno)d] %(message)s",
-#             "datefmt": "%Y-%m-%d %H:%M:%S",
-#         },
-#     },
-#     "handlers": {
-#         "console": {
-#             "level": "DEBUG",
-#             "filters": ["require_debug_true"],
-#             "class": "logging.StreamHandler",
-#             "formatter": "simple",
-#         },
-#         "development_logfile": {
-#             "level": "DEBUG",
-#             "filters": ["require_debug_true"],
-#             "class": "logging.FileHandler",
-#             "filename": os.path.join(BASE_DIR, "logs", "development.log"),
-#             "formatter": "verbose",
-#         },
-#         "production_logfile": {
-#             "level": "DEBUG",
-#             "filters": ["require_debug_false"],
-#             "class": "logging.handlers.RotatingFileHandler",
-#             "filename": os.path.join(BASE_DIR, "logs", "production.log"),
-#             "maxBytes": 1024 * 1024 * 100,  # 100MB
-#             "backupCount": 5,
-#             "formatter": "verbose",
-#         },
-#         "dba_logfile": {
-#             "level": "DEBUG",
-#             "filters": ["require_debug_true"],
-#             "class": "logging.handlers.WatchedFileHandler",
-#             "filename": os.path.join(BASE_DIR, "logs", "dba.log"),
-#             "formatter": "verbose",
-#         },
-#     },
-#     "root": {"level": "DEBUG", "handlers": ["console"]},
-#     "loggers": {
-#         "dba": {"handlers": ["dba_logfile"]},
-#         "tenfold": {"handlers": ["development_logfile", "production_logfile"]},
-#         "py.warnings": {"handlers": ["development_logfile"]},
-#         "django.db.backends": {
-#             "level": "DEBUG",
-#             "handlers": ["console", "development_logfile"],
-#         },
-#     },
-# }
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": True,
+    "filters": {
+        "require_debug_false": {"()": "django.utils.log.RequireDebugFalse"},
+        "require_debug_true": {"()": "django.utils.log.RequireDebugTrue"},
+    },
+    "formatters": {
+        "simple": {
+            "format": "[%(asctime)s] %(levelname)s %(message)s",
+            "datefmt": "%Y-%m-%d %H:%M:%S",
+        },
+        "verbose": {
+            "format": "[%(asctime)s] %(levelname)s [%(name)s.%(funcName)s:%(lineno)d] %(message)s",
+            "datefmt": "%Y-%m-%d %H:%M:%S",
+        },
+    },
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "filters": ["require_debug_true"],
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
+        },
+        "development_logfile": {
+            "level": "DEBUG",
+            "filters": ["require_debug_true"],
+            "class": "logging.FileHandler",
+            "filename": os.path.join(BASE_DIR, "logs", "development.log"),
+            "formatter": "verbose",
+        },
+        "production_logfile": {
+            "level": "DEBUG",
+            "filters": ["require_debug_false"],
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": os.path.join(BASE_DIR, "logs", "production.log"),
+            "maxBytes": 1024 * 1024 * 100,  # 100MB
+            "backupCount": 5,
+            "formatter": "verbose",
+        },
+        "dba_logfile": {
+            "level": "DEBUG",
+            "filters": ["require_debug_true"],
+            "class": "logging.handlers.WatchedFileHandler",
+            "filename": os.path.join(BASE_DIR, "logs", "dba.log"),
+            "formatter": "verbose",
+        },
+    },
+    "root": {"level": "DEBUG", "handlers": ["console"]},
+    "loggers": {
+        "dba": {"handlers": ["dba_logfile"]},
+        "tenfold": {"handlers": ["development_logfile", "production_logfile"]},
+        "py.warnings": {"handlers": ["development_logfile"]},
+        "django.db.backends": {
+            "level": "DEBUG",
+            "handlers": ["console", "development_logfile"],
+        },
+    },
+}
 
 CRISPY_TEMPLATE_PACK = "materialize_css_forms"
 MATERIALIZECSS_ICON_SET = "fontawesome"

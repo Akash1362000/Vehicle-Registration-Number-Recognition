@@ -1,3 +1,4 @@
+from django.db.models import Max
 from django.shortcuts import redirect, render
 
 from .forms import ImageUploadForm
@@ -20,5 +21,14 @@ def upload_image(request):
 
 
 def image_list(request):
-    images = VehicleImage.objects.all()
-    return render(request, "image_list.html", {"images": images})
+    images = VehicleImage.objects.all().filter().order_by("-modified")
+    max_accuracy = images.aggregate(Max("accuracy")).get("accuracy__max") or 0.0
+    return render(
+        request,
+        "image_list.html",
+        {
+            "images": images,
+            "total_vehicles": images.count(),
+            "max_accuracy": max_accuracy,
+        },
+    )

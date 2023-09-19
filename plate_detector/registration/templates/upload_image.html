@@ -1,17 +1,33 @@
-<!DOCTYPE html>
-<html>
+{% extends 'registration/base.html' %}
+{% load materializecss %}
+{% load crispy_forms_tags %}
 
-    <head>
-        <title>Upload Image</title>
-    </head>
+{% block head %}
 
-    <body>
-        <h1>Upload an Image</h1>
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Upload</button>
-        </form>
-    </body>
+<head>
+    <title>Detect Registration Number</title>
+</head>
+{% endblock head %}
 
-</html>
+{% block body %}
+<style>
+    .top-space {
+        margin-top: 100px;
+    }
+</style>
+
+<body>
+    <div class="container row z-depth-5">
+        <div class="card">
+            <form class="center container" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | materializecss }}
+
+                <button class="btn waves-effect waves-light top-space green" type="submit"><i
+                        class="large material-icons">upload</i> Upload</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+{% endblock body %}

@@ -1,7 +1,7 @@
 import openalpr
 
 
-def process_image(image_path) -> str:
+def process_image(image_path) -> dict:
     alpr = openalpr.Alpr(
         "us",
         "/etc/openalpr/openalpr.conf",
@@ -9,6 +9,12 @@ def process_image(image_path) -> str:
     )
     results = alpr.recognize_file(image_path)
     if results["results"]:
-        return results["results"][0]["plate"]
+        return {
+            "registration_number": results.get("results")[0].get("plate"),
+            "accuracy": round(results.get("results")[0].get("confidence"), 2),
+        }
     else:
-        return "None"
+        return {
+            "registration_number": "None",
+            "accuracy": 0.0,
+        }

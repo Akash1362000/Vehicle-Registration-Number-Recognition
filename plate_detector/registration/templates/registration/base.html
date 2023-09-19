@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <meta name="theme-color" content="#c62828">
+        {% block head %}{% endblock %}
+    </head>
+
+    <body>
+        <style>
+            a:link {
+                text-decoration: none;
+            }
+
+            .card {
+                height: 750px;
+            }
+        </style>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper" style="padding: 0px 50px; background-color: #c62828">
+                    <a href="{% url 'image_list' %}" class="brand-logo">Vehicle Registration Number Detector</a>
+                    <ul class="right">
+                        <li><a href="{% url 'image_list' %}">Home</a></li>
+                        <li><a href="{% url 'admin:index' %}" target="_blank">Admin Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Body -->
+        {% block body %}{% endblock %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Image List</title>
+    </head>
+
+    <body>
+        <h1>Image List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Image Name</th>
+                    <th>Registration Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for image in images %}
+                <tr>
+                    <td>{{ image.image.name }}</td>
+                    <td>{{ image.registration_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+
+</html>

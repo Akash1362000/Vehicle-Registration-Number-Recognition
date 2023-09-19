@@ -78,8 +78,12 @@ WSGI_APPLICATION = "plate_detector.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": os.getenv("DATABASE_NAME", default="plate_detector"),
+        "USER": os.getenv("DATABASE_USER", default="postgres"),
+        "PASSWORD": os.getenv("DATABASE_PASSWORD", default="postgres"),
+        "HOST": os.getenv("DB_HOST", default="localhost"),
+        "PORT": "5432",
     }
 }
 

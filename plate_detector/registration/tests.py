@@ -16,7 +16,7 @@ class VehicleImageTestCase(TestCase):
 
     def test_process_image(self):
         result = process_image(image_path=self.image_path)
-        self.assertEqual(result, "786P0")
+        self.assertEqual(result.get("registration_number"), "786P0")
 
     def test_upload_image_view(self):
         response = self.client.post(reverse("upload_image"), {"image": self.test_image})

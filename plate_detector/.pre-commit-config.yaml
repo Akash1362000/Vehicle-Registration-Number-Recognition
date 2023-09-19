@@ -1,4 +1,4 @@
-exclude: 'wip'
+exclude: .*migrations\/.*
 repos:
 - repo: https://github.com/pycqa/isort
   rev: 5.12.0
@@ -16,7 +16,27 @@ repos:
   -   id: pyupgrade
       name: pyupgrade-py
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v2.3.0
+  rev: v4.4.0
   hooks:
   -   id: end-of-file-fixer
   -   id: trailing-whitespace
+  -   id: check-ast
+  -   id: check-added-large-files
+  -   id: check-yaml
+  -   id: check-case-conflict
+  -   id: check-docstring-first
+  -   id: check-json
+  -   id: check-merge-conflict
+  -   id: debug-statements
+  -   id: detect-private-key
+  -   id: pretty-format-json
+  -   id: requirements-txt-fixer
+
+-   repo: local
+    hooks:
+      - id: django-test
+        name: Run Django Test Cases
+        entry: python ./plate_detector/manage.py test
+        always_run: true
+        pass_filenames: false
+        language: system

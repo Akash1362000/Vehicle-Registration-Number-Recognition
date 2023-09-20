@@ -2,12 +2,17 @@
 
 A simple web application to detect the registration number of the vehicle from the uploaded image. The application uses the OpenALPR library to identify the registration number. Users can go to the application, upload any vehicle's image and get the registration number. Currently, the application can detect only US-based vehicle registration numbers. Support for other countries will be added to the application in the near future. 
 
-## Dashboard UI
-![Vehicle Registration Number Recognition]()
+## Dashboard UI ✨
+![Vehicle Registration Number Recognition](https://github.com/Akash1362000/Vehicle-Registration-Number-Recognition/blob/main/plate_detector/walkthrough/Vehicle%20Registration%20Number%20Detector%20Dashboard.png)
+
+## Project Demo 📽
+![Project Demo](https://github.com/Akash1362000/Vehicle-Registration-Number-Recognition/blob/main/plate_detector/walkthrough/walkthrough.gif)
 
 ## Features 🤩
 
-✅ 
+✅ Upload images of vehicles
+
+✅ Get the registration numbers of US-based vehicles
 
 ## Tech stack 👨‍💻
 
@@ -30,8 +35,7 @@ A simple web application to detect the registration number of the vehicle from t
 4. Database Setup
 5. Class Diagram
 6. ER Diagram
-7. Project Demo
-8. Anticipated features
+7. Anticipated features
 
 ## What is ALPR? 🤔
 [OpenALPR](https://github.com/openalpr/openalpr) is an open-source Automatic License Plate Recognition library written in C++ with bindings in C#, Java, Node.js, Go, and Python. The library analyzes images and video streams to identify license plates. The output is the text representation of any license plate characters.
@@ -88,9 +92,6 @@ Open your desired browser and head over to [http://127.0.0.1:8000/](http://127.0
 
 ## ER Diagram ✍
 ![Vehicle Registration Number Recognition ER Diagram](https://github.com/Akash1362000/Vehicle-Registration-Number-Recognition/blob/main/plate_detector/diagrams/ER_Diagram.png)
-
-## Project Demo 📽
-![Vehicle Registration Number Recognition Project Demo]()
 
 ## Anticipated Features 🔥
 

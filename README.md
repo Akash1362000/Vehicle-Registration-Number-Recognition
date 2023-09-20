@@ -6,6 +6,8 @@ A simple web application to detect the registration number of the vehicle from t
 ![Vehicle Registration Number Recognition](https://github.com/Akash1362000/Vehicle-Registration-Number-Recognition/blob/main/plate_detector/walkthrough/Vehicle%20Registration%20Number%20Detector%20Dashboard.png)
 
 ## Project Demo 📽
+**Note** : Wait for about 5 seconds for it to load
+
 ![Project Demo](https://github.com/Akash1362000/Vehicle-Registration-Number-Recognition/blob/main/plate_detector/walkthrough/walkthrough.gif)
 
 ## Features 🤩
